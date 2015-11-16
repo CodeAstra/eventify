@@ -16,7 +16,11 @@
       </div>
       <div class="well">
         <h2>Attendees</h2>
-        <%= link_to "I want to Attend", event_rsvps_path(@event), method: :post, class: "btn btn-sm btn-primary btn-block" %>
+        <% if current_user.attending?(@event) %>
+          <%= link_to "I want to Drop", event_rsvp_path(@event, current_user.rsvp_for(@event)), method: :delete, class: "btn btn-sm btn-danger btn-block" %>
+        <% else %>
+          <%= link_to "I want to Attend", event_rsvps_path(@event), method: :post, class: "btn btn-sm btn-primary btn-block" %>
+        <% end %>
         <ul>
           <%= render @rsvps %>
         </ul>
