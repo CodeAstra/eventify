@@ -12,7 +12,7 @@
       </div>
       <div class="well">
         <h2>Attendees</h2>
-        <%= simple_form_for @new_rsvp do |f| %>
+        <%= simple_form_for [@event, @new_rsvp] do |f| %>
           <%= f.input :email, label: false, placeholder: "Enter your email" %>
           <%= f.submit "I want to Attend", class: "btn btn-sm btn-primary btn-block" %>
         <% end %>

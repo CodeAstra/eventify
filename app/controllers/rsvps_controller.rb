@@ -1,8 +1,10 @@
 class RsvpsController < ApplicationController
   def create
-    @rsvp = Rsvp.new
+    @event = Event.find(params[:event_id])
+    @rsvp = @event.rsvps.new
     @rsvp.email = params[:rsvp][:email]
-    @rsvp.save!
-    redirect_to events_path
+    flash[:alert] = "Please enter your email" unless @rsvp.save
+
+    redirect_to @event
   end
 end

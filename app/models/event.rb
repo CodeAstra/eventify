@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  has_many :rsvps
+
   def self.pretty_new
     ev = self.new
     ev_time = Time.now.beginning_of_hour + 1.hour
