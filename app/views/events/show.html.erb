@@ -8,22 +8,7 @@
     </div>
     <div class="col-sm-3">
       <div class="well">
-        <% if @event.start_time.to_date == @event.end_time.to_date %>
-          <div class="common_date">
-            <h3><%= @event.start_time.strftime("%b %-d, %Y") %></h3>
-            <p>
-              <%= @event.start_time.strftime("%l:%M %P") %> - <%= @event.end_time.strftime("%l:%M %P") %>
-            </p>
-          </div>
-        <% else %>
-          <div class="diff_date">
-            <h3><%= @event.start_time.strftime("%l:%M %P %b %-d, %Y") %></h3>
-            <p>
-              to
-            </p>
-            <h3><%= @event.end_time.strftime("%l:%M %P %b %-d, %Y") %></h3>
-          </div>
-        <% end %>
+        <%= event_time_tag(@event) %>
       </div>
       <div class="well">
         <h2>Attendees</h2>
