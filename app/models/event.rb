@@ -1,5 +1,8 @@
 class Event < ActiveRecord::Base
   has_many :rsvps
+  belongs_to :user
+
+  validates :user, presence: true
 
   def self.pretty_new
     ev = self.new

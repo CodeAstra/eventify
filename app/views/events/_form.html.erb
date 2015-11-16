@@ -1,0 +1,7 @@
+<%= simple_form_for event, html: {class: "well"} do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :start_time %>
+  <%= f.input :end_time %>
+  <%= f.submit (event.new_record? ? 'Add Event' : 'Update Event'), class: "btn btn-primary btn-lg" %>
+<% end %>

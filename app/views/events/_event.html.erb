@@ -1,5 +1,9 @@
 <div class="event well">
   <%= link_to "Details", event_path(event), class: "pull-right" %>
+  <% if event.user == current_user %>
+    <%= link_to "Edit", edit_event_path(event), class: "pull-right" %>
+    <%= link_to "Delete", event_path(event), method: :delete, class: "pull-right" %>
+  <% end %>
   <h3><%= event.title %></h3>
   <p>
     <%= event.description %>
