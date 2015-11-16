@@ -1,5 +1,4 @@
 class Rsvp < ActiveRecord::Base
   belongs_to :event
-
-  validates :email, presence: true
+  belongs_to :user
 end
