@@ -17,6 +17,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @new_rsvp = Rsvp.new
+    @rsvps = Rsvp.all
   end
 
 private
