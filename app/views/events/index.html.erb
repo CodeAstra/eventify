@@ -1,6 +1,10 @@
 <h1>Events</h1>
-<ul>
-  <% Event.all.each do |event| %>
-    <li><%= event.inspect %></li>
+<section id="events">
+  <% if @events.any? %>
+    <%= render @events %>
+  <% else %>
+    <div class="well">
+      No events yet
+    </div>
   <% end %>
-</ul>
+</section>
